@@ -6,7 +6,7 @@ digraph NAUDE_HOME  {
         }
 
 	node [shape=box, fontname = "helvetica:bold"]; {		
-		node [label="Arris Cable Modem\n(Office)", color=firebrick1, style=filled] cablemodem;
+		node [label="Arris SB6183\nCable Modem\n(Office)", color=firebrick1, style=filled] cablemodem;
 		node [label="GORILLA\npfSense FW/Router\n(Office)", color=deepskyblue1, style=filled] router;
 		node [label="1Gb Switch\n(Office)", color=deepskyblue1, style=filled] switch1;
 		node [label="1Gb Switch\n(Living Room)", color=deepskyblue1, style=filled] switch2;
