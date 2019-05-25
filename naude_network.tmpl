@@ -38,6 +38,13 @@ digraph NAUDE_HOME  {
 		node [label="Samsung Blueray"] blueray; 
 	}
 
+	node [shape=box, color=turquoise, style=filled, fontname = "helvetica:bold"]; {
+		node [label="Chris's Pixel Phone"] chris_phone; 
+		node [label="Nikki Pixel XL Phone"] nikki_phone; 
+		node [label="Chris' Dell Tablet"] chris_tab; 
+		node [label="Nikki's Samsung Tablet"] nikki_tab; 
+	}
+
 	node [shape=ellipse, color=gold2, fontname = "helvetica:bold"]; {
 		node [label="2.5TB\nHard Drive"] hdd1; 
 		node [label="Weather\nConsole"] wconsole;
@@ -78,6 +85,10 @@ digraph NAUDE_HOME  {
 	ap1 -> springbok [label="wifi",fontname = "helvetica:bold",dir="both"];
 	ap1 -> nintendo_switch [label="wifi",fontname = "helvetica:bold",dir="both"];
 	ap1 -> roku2 [label="wifi",fontname = "helvetica:bold",dir="both"];
+	ap1 -> chris_phone [label="wifi",fontname = "helvetica:bold",dir="both"];
+	ap1 -> chris_tab [label="wifi",fontname = "helvetica:bold",dir="both"];
+	ap1 -> nikki_phone [label="wifi",fontname = "helvetica:bold",dir="both"];
+	ap1 -> nikki_tab [label="wifi",fontname = "helvetica:bold",dir="both"];
 
 	nintendo_switch -> receiver [label="hdmi",fontname = "helvetica:bold"];
 	receiver -> tv [label="hdmi",fontname = "helvetica:bold"];
