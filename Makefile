@@ -1,14 +1,15 @@
 ts := $(shell /bin/date "+%Y-%m-%d %H:%M:%S")
 
-TEMPLATE=naude_network.dot.tmpl
-DOT_FILE=naude_network.dot
-OUT_FILE=naude_network.png
 OUT_TYPE=png
 
-all: dot png
+all: dot png clean
 
-dot: $($DOT_FILE)
-	sed "s/{{TIMESTAMP}}/$(ts)/g" $(TEMPLATE) > $(DOT_FILE)
+dot:
+	$(foreach var,$(shell ls *tmpl),sed "s/{{TIMESTAMP}}/$(ts)/g" $(var) > $$(echo $(var) | sed "s/.tmpl/.dot/g");)
 
-png: $(OUT_FILE)
-	dot -T$(OUT_TYPE) $(DOT_FILE) -o $(OUT_FILE)
+png:
+	$(foreach var,$(shell ls *dot),dot -T$(OUT_TYPE) $(var) -o $$(echo $(var) | sed "s/.dot/.png/g");)
+
+clean:
+	rm *dot
+
