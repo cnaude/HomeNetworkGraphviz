@@ -11,7 +11,6 @@ digraph NAUDE_HOME  {
 		node [label="1Gb Switch\n(Office)", color=deepskyblue1, style=filled] switch1;
 		node [label="1Gb Switch\n(Living Room)", color=deepskyblue1, style=filled] switch2;
 		node [label="Ubiquiti Wifi AP\n(Living Room)", color=deepskyblue1, style=filled] ap1;
-		node [label="MoCA Switch\n(Living Room)", color=deepskyblue1, style=filled] moca;
 		node [label="Cox Tuner Adater\n(Living Room)", color=deepskyblue1, style=filled] cox_tuner;
 	}
 
@@ -28,8 +27,6 @@ digraph NAUDE_HOME  {
 	node [shape=box, color=deeppink1, style=filled, fontname = "helvetica:bold"]; {
 		node [label="Roku\n(Living Room)"] roku; 
 		node [label="Roku\n(Bedroom)"] roku2; 
-		node [label="Tivo\n(Living Room)"] tivo; 
-		node [label="Tivo Mini\n(Bedroom)"] tivo_mini; 
 		node [label="OSTRICH\nChromecast"] chromecast; 
 		node [label="Onkyo Receiver"] receiver; 
 		node [label="Samsung TV\n(Living Room)"] tv; 
@@ -56,14 +53,8 @@ digraph NAUDE_HOME  {
 		node [label="Weather\nStation\n(Backyard)"] weather;
 	}
 
-	cox -> moca [label="coax",fontname = "helvetica:bold",dir="both"];
-	moca -> cox_tuner [label="coax",fontname = "helvetica:bold"];
-	cox_tuner -> tivo [label="coax",fontname = "helvetica:bold"];
-	moca -> tivo_mini [label="coax",fontname = "helvetica:bold"];
 	cox -> cablemodem [label="coax",fontname = "helvetica:bold",dir="both"];
-	moca -> switch2 [label="lan",fontname = "helvetica:bold",dir="both"];
 
-	tivo_mini -> tv2 [label="hdmi",fontname = "helvetica:bold"];
 	roku2 -> tv2 [label="hdmi",fontname = "helvetica:bold"];
 
 	cablemodem -> router [label="wan (red)",fontname = "helvetica:bold",dir="both"];
@@ -91,7 +82,6 @@ digraph NAUDE_HOME  {
 	ap1 -> nikki_tab [label="wifi",fontname = "helvetica:bold",dir="both"];
 
 	nintendo_switch -> receiver [label="hdmi",fontname = "helvetica:bold"];
-	tivo -> receiver [label="hdmi",fontname = "helvetica:bold"];
 	roku -> receiver [label="hdmi",fontname = "helvetica:bold"];
 	chromecast -> receiver [label="hdmi",fontname = "helvetica:bold"];
 	blueray -> receiver [label="hdmi",fontname = "helvetica:bold"];
@@ -99,7 +89,6 @@ digraph NAUDE_HOME  {
 
 	# switch2 -- receiver [label="lan",fontname = "helvetica:bold",dir="both"];
 	switch2 -> roku [label="lan",fontname = "helvetica:bold",dir="both"];
-	switch2 -> tivo [label="lan",fontname = "helvetica:bold",dir="both"];
 	
 	weather -> wconsole [label="radio",fontname = "helvetica:bold"];
 	wconsole -> giraffe [label="usb",fontname = "helvetica:bold"];
